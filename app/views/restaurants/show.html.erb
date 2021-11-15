@@ -17,7 +17,11 @@
       </div>
     <% end %>
 
-  <div class="add-review">
+  <!-- <div class="add-review">
     <%= link_to "Add a new review",  new_restaurant_review_path(@restaurant) %>
-  </div>
+  </div> -->
+
+  <br>
+  <h6><strong>Add a new review</strong></h6>
+  <%= render 'reviews/form' %>
 </div>
