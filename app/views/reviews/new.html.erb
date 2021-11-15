@@ -1,0 +1,13 @@
+<%= render 'restaurants/navbar' %>
+
+<div class="container">
+  <h2>this is for adding a new review to the restaurant</h2>
+
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :rating, as: :select, collection: %w[0 1 2 3 4 5], prompt: 'Select Rating' %>
+    <%= f.input :content %>
+    <%= f.submit "Add review", class:"btn btn-primary mt-3"%>
+  <% end %>
+
+  <%= link_to "Back to restaurant", restaurant_path(@restaurant) %>
+</div>

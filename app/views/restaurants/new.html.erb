@@ -1,0 +1,15 @@
+<%= render 'navbar' %>
+
+<div class="container">
+  <h1>this is where the user can add a new restaurant</h1>
+
+  <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :category, as: :select, collection: %w[chinese italian japanese french belgian], prompt: 'Select Category' %>
+    <%= f.submit "Create Restaurant", class:"btn btn-primary mt-3"%>
+  <% end %>
+
+  <%= link_to "Back to all restaurants", restaurants_path %>
+</div>

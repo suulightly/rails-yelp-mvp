@@ -1,0 +1,23 @@
+<%= render 'navbar' %>
+
+<div class="container">
+  <h1>and this is where you see just one restaurant</h1>
+
+  <h5><strong><%= @restaurant.name %></strong></h5>
+  <p>Address: <%= @restaurant.address %></p>
+  <p>Category: <%= @restaurant.category %></p>
+
+  <h6><strong>Reviews</strong></h6>
+    <%  @restaurant.reviews.each do |review| %>
+      <div class="card">
+        <div class="card-body">
+          <p><%= review.content %></p>
+          <p>Rating: <%= review.rating %></p>
+        </div>
+      </div>
+    <% end %>
+
+  <div class="add-review">
+    <%= link_to "Add a new review",  new_restaurant_review_path(@restaurant) %>
+  </div>
+</div>

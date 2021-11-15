@@ -1,0 +1,15 @@
+<%= render 'navbar' %>
+
+<div class="container">
+  <h1>hello this is where all the restaurants should be</h1>
+
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+      <li><h5><strong><%= link_to restaurant.name, restaurant_path(restaurant) %></strong></h5></li>
+        <p>Address: <%= restaurant.address %></p>
+        <p>Phone: <%= restaurant.phone_number %></p>
+        <p>Category: <%= restaurant.category %></p>
+        ---
+    <% end %>
+  </ul>
+</div>
